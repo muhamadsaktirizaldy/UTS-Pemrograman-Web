@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi E-Commerce</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Bershopping</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showProduk()">Daftar Produk</a></li>
+                <li><a href="#" onclick="showKeranjang()">Keranjang</a></li>
+                <li><a href="#" onclick="showCheckout()">Checkout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Halaman Daftar Produk -->
+        <section id="produk">
+            <h2>Daftar Produk</h2>
+            <div class="produk-container">
+                <div class="produk" data-id="1">
+                    <h3>Tempat Makan</h3>
+                    <p>Rp 50.000</p>
+                    <button onclick="tambahKeKeranjang(1, 'Tempat Makan', 50000)">Tambah ke Keranjang</button>
+                </div>
+                <div class="produk" data-id="2">
+                    <h3>Botol Minum</h3>
+                    <p>Rp 60.000 </p>
+                    <button onclick="tambahKeKeranjang(2, 'Botol Minum', 60000)">Tambah ke Keranjang</button>
+                </div>
+                <div class="produk" data-id="3">
+                    <h3>Tas Sekolah</h3>
+                    <p>Rp 300.000</p>
+                    <button onclick="tambahKeKeranjang(3, 'Tas Sekolah', 300000)">Tambah ke Keranjang</button>
+                </div>
+                    <div class="produk" data-id="4">
+                        <h3>Sendok Makan</h3>
+                        <p>Rp 20.000</p>
+                        <button onclick="tambahKeKeranjang(4, 'Sendok Makan', 20000)">Tambah ke Keranjang</button>
+                    </div>
+                    <div class="produk" data-id="5">
+                        <h3>Kaos kaki</h3>
+                        <p>Rp 25.000</p>
+                        <button onclick="tambahKeKeranjang(5, 'Kaos Kaki', 25000)">Tambah ke Keranjang</button>
+                    </div>
+                    <div class="produk" data-id="6">
+                        <h3>Topi Pria</h3>
+                        <p>Rp 68.000</p>
+                        <button onclick="tambahKeKeranjang(6, 'Topi Pria', 68000)">Tambah ke Keranjang</button>
+                    </div>
+                    <div class="produk" data-id="7">
+                        <h3>Buku Tulis</h3>
+                        <p>Rp 59.000</p>
+                        <button onclick="tambahKeKeranjang(7, 'Buku Tulis', 59000)">Tambah ke Keranjang</button>
+                    </div>
+                    <div class="produk" data-id="4">
+                        <h3>1 Set Alat Tulis</h3>
+                        <p>Rp 169.000</p>
+                        <button onclick="tambahKeKeranjang(8, '1 Set Alat Tulis', 169000)">Tambah ke Keranjang</button>
+                    </div>
+            </div>
+        </section>
+
+        <!-- Halaman Keranjang -->
+        <section id="keranjang" style="display:none;">
+            <h2>Keranjang Belanja</h2>
+            <table id="keranjang-table">
+                <thead>
+                    <tr>
+                        <th>Nama Produk</th>
+                        <th>Jumlah</th>
+                        <th>Harga</th>
+                        <th>Total</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Produk yang ditambahkan akan muncul di sini -->
+                </tbody>
+            </table>
+            <button onclick="goToCheckout()">Ke Checkout</button>
+            <button onclick="showProduk()">Kembali ke Produk</button>
+        </section>
+
+        <!-- Halaman Checkout -->
+        <section id="checkout" style="display:none;">
+            <h2>Checkout</h2>
+            <p>Total Belanja: <span id="total-belanja">Rp 0</span></p>
+            <button onclick="prosesPembayaran()">Proses Pembayaran</button>
+            <button onclick="showKeranjang()">Kembali ke Keranjang</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
